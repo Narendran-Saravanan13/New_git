@@ -1,0 +1,33 @@
+import { test, expect } from '@playwright/test';
+
+test('test', async ({ page }) => {
+  await page.goto('https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dtest%2Bautomation%2Bpractice%26oq%3Dtest%2Bautomation%2Bpractice%26gs_lcrp%3DEgZjaHJvbWUyBggAEEUYOdIBCTIxMzk0ajBqNKgCALACAQ%26sourceid%3Dchrome%26ie%3DUTF-8%26sei%3DT3aAaLnYLJmu4-EP0c6egAI&q=EgR6pFEYGNDsgcQGIjBK4sa06GXjkmX8xiNs9IawSK_nwf2c1borND3Ro4qMsUB0q5GzmklEqPPMFYIvf_UyAVJaAUM');
+  await page.locator('iframe[name="a-j5gqtjm9siyl"]').contentFrame().getByRole('checkbox', { name: 'I\'m not a robot' }).click();
+  await page.locator('iframe[name="c-j5gqtjm9siyl"]').contentFrame().locator('td:nth-child(2)').first().click();
+  await page.locator('iframe[name="c-j5gqtjm9siyl"]').contentFrame().locator('tr:nth-child(2) > td').first().click();
+  await page.locator('iframe[name="c-j5gqtjm9siyl"]').contentFrame().locator('tr:nth-child(3) > td').first().click();
+  await page.locator('iframe[name="c-j5gqtjm9siyl"]').contentFrame().getByRole('button', { name: 'Verify' }).click();
+  await page.getByRole('link', { name: 'Automation Testing Practice Automation Testing Practice https://' }).click();
+  await page.getByRole('textbox', { name: 'Enter Name' }).click();
+  await page.getByRole('textbox', { name: 'Enter Name' }).fill('narendran');
+  await page.getByRole('textbox', { name: 'Enter EMail' }).click();
+  await page.getByRole('textbox', { name: 'Enter EMail' }).fill('snarendran1313@gmail.com');
+  await page.getByRole('textbox', { name: 'Enter Phone' }).click();
+  await page.getByRole('textbox', { name: 'Enter Phone' }).fill('9500518671');
+  await page.getByRole('textbox', { name: 'Address:' }).click();
+  await page.getByRole('textbox', { name: 'Address:' }).fill('no;12huhehesbcsh');
+  await page.getByRole('radio', { name: 'Male', exact: true }).check();
+  await page.getByRole('checkbox', { name: 'Sunday' }).check();
+  await page.getByRole('checkbox', { name: 'Saturday' }).check();
+  await page.getByLabel('Country:').selectOption('india');
+  await page.getByLabel('Colors:').selectOption('green');
+  await page.getByLabel('Sorted List:').selectOption('dog');
+  await page.locator('#datepicker').click();
+  await page.getByRole('link', { name: '16' }).click();
+  await page.locator('#txtDate').click();
+  await page.getByRole('link', { name: '24' }).click();
+  await page.locator('#post-body-1307673142697428135').getByRole('button', { name: 'Submit' }).click();
+  await page.locator('#post-body-1307673142697428135').getByRole('button', { name: 'Submit' }).click();
+  await page.getByRole('button', { name: 'Point Me' }).click();
+  await page.getByRole('link', { name: 'Mobiles' }).click();
+});
